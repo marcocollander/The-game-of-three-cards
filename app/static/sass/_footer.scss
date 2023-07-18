@@ -1,0 +1,13 @@
+.footer {
+  position: relative;
+  bottom: -50vh;
+  padding: 10px;
+  font-size: 1.3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  background-color: #000;
+  &__description {
+    color: #fff;
+    text-align: center;
+  }
+}
