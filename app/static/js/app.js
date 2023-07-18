@@ -49,6 +49,7 @@ const inputPercentageResult = getSelector("#hit_percentage");
 const message = getSelector(".hit__message");
 
 btnStart.addEventListener("click", function () {
+  
   clickCounter = 0;
   message.innerHTML = "";
   ++numberOfAttempts;
