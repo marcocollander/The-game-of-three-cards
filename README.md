@@ -1,1 +1,1 @@
-# Game of three cards create in vanilla javascript
+# The game of three cards
