@@ -7,7 +7,9 @@
     {% if current_user.is_authenticated %}
       {{ current_user.username }}
     {% else %}
-      nieznajomy
+      wyniki tylko
+      <a href="{{url_for('auth.login')}}" class="menu__link--message">zalogowanych</a>
+      użytkowników zostaną zapisane w bazie danych
     {% endif %}
   </p>
   <section class="game" id="game">

@@ -72,6 +72,10 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-decoration: none;
 }
+.menu__link--message {
+  font-weight: bold;
+  color: black;
+}
 
 .hamburger {
   position: fixed;

@@ -57,6 +57,11 @@
     color: inherit;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
+
+    &--message {
+      font-weight: bold;
+      color: black;
+    }
   }
 }
 
