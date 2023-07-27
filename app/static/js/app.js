@@ -1,8 +1,8 @@
-const getSelector = (selector) => {
+const getSelector = selector => {
   return document.querySelector(selector);
 };
 
-const getSelectors = (selector) => {
+const getSelectors = selector => {
   return document.querySelectorAll(selector);
 };
 
@@ -31,10 +31,11 @@ let [i, j, k, index, numberOfHits, clickCounter, numberOfAttempts] = [
   0, 1, 2, 0, 0, 0, 0,
 ];
 
+const MAX_NUMBER_OF_ATTEMPTS = 10;
+
 const hamburger = getSelector(".hamburger");
 const hamburgerItems = getSelectors(".hamburger__item");
 const menu = getSelector(".menu");
-
 
 addListener(hamburger, () => {
   menu.classList.toggle("hidden");
@@ -49,7 +50,6 @@ const inputPercentageResult = getSelector("#hit_percentage");
 const message = getSelector(".hit__message");
 
 btnStart.addEventListener("click", function () {
-  
   clickCounter = 0;
   message.innerHTML = "";
   ++numberOfAttempts;
@@ -63,16 +63,13 @@ btnStart.addEventListener("click", function () {
 
   btnStart.disabled = true;
   btnReset.disabled = false;
-  images.forEach((image) => {
+  images.forEach(image => {
     image.classList.toggle("rotate");
     image.classList.toggle("rotate-one");
     image.setAttribute("src", card_back);
   });
 
   i = Math.floor(Math.random() * 3);
-  // const numbers = [0, 1, 2];
-  // index = numbers.find((number) => number == i);
-  // numbers.splice(index);
 
   switch (i) {
     case 0:
@@ -106,9 +103,16 @@ btnReset.addEventListener("click", () => {
   }
 });
 
-referenceDamaKaro.addEventListener("click", () => {
+referenceDamaKaro.addEventListener("click", e => {
   clickCounter++;
   btnStart.disabled = false;
+
+  if (numberOfAttempts === MAX_NUMBER_OF_ATTEMPTS) {
+    btnStart.disabled = true;
+    alert("gra skończona, wyślij wyniki na server");
+    e.preventDefault();
+  }
+
   if (cards[i] === damaPik && clickCounter === 1) {
     numberOfHits++;
     message.innerHTML = "Hurra, trafiłeś!";
@@ -121,6 +125,13 @@ referenceDamaKaro.addEventListener("click", () => {
 referenceDamaPik.addEventListener("click", () => {
   clickCounter++;
   btnStart.disabled = false;
+
+  if (numberOfAttempts === MAX_NUMBER_OF_ATTEMPTS) {
+    btnStart.disabled = true;
+    alert("gra skończona, wyślij wyniki na server");
+    e.preventDefault();
+  }
+
   if (cards[j] === damaPik && clickCounter === 1) {
     numberOfHits++;
     message.innerHTML = "Hurra, trafiłeś!";
@@ -133,6 +144,12 @@ referenceDamaPik.addEventListener("click", () => {
 referenceDamaKier.addEventListener("click", () => {
   clickCounter++;
   btnStart.disabled = false;
+  if (numberOfAttempts === MAX_NUMBER_OF_ATTEMPTS) {
+    btnStart.disabled = true;
+    alert("gra skończona, wyślij wyniki na server");
+    e.preventDefault();
+  }
+
   if (cards[k] === damaPik && clickCounter === 1) {
     numberOfHits++;
     message.innerHTML = "Hurra, trafiłeś!";

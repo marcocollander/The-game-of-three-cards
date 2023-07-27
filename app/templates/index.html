@@ -5,7 +5,8 @@
   <p class="content__message">
     Witaj,
     {% if current_user.is_authenticated %}
-      {{ current_user.username }}
+      {{ current_user.username }}.
+    Twój ostatni wynik do {{ current_user.results }} % trafień
     {% else %}
       wyniki tylko
       <a href="{{url_for('auth.login')}}" class="menu__link--message">zalogowanych</a>
