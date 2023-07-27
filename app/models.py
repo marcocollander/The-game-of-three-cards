@@ -24,7 +24,12 @@ class User(UserMixin, db.Model):
     confirmed = db.Column(db.Boolean, default=False)
     results = db.Column(db.Integer, default=0)
 
-    # role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
+    def change_results(self, new_results):
+        self.results = new_results
+        db.session.add(self)
+        db.session.commit();
+
+
 
     def generate_confirmation_token(self, expiration=3600):
         s = Serializer(current_app.config['SECRET_KEY'], expiration)

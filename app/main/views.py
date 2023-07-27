@@ -11,11 +11,6 @@ from .forms import MainForm
 def index():
     form = MainForm()
     if form.validate_on_submit() and current_user.is_authenticated:
-        user = User.query.filter_by(username="Marek").first()
-        user_temp = User()
-        user_temp.results = form.hit_percentage.data
-        db.session.add(user_temp)
-        db.session.commit()
-        print(user)
+       current_user.change_results(form.hit_percentage.data)
 
     return render_template("index.html", form=form)
