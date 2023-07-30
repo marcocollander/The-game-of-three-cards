@@ -2,37 +2,37 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block page_content %}
-  <p class="content__message">
-    Witaj,
-    {% if current_user.is_authenticated %}
-      {{ current_user.username }}.
-    Twój ostatni wynik do {{ current_user.results }} % trafień
-    {% else %}
-      wyniki tylko
-      <a href="{{url_for('auth.login')}}" class="menu__link--message">zalogowanych</a>
-      użytkowników zostaną zapisane w bazie danych
-    {% endif %}
-  </p>
-  <section class="game" id="game">
-    <h1 class="game__heading">Wynik</h1>
-    <div class="container">
-      {{ wtf.quick_form(form) }}
-    </div>
+<p class="content__message">
+  Witaj,
+  {% if current_user.is_authenticated %}
+  {{ current_user.username }}.
+  Twój ostatni wynik do {{ current_user.results }} % trafień
+  {% else %}
+  wyniki tylko
+  <a href="{{url_for('auth.login')}}" class="menu__link--message">zalogowanych</a>
+  użytkowników zostaną zapamiętane
+  {% endif %}
+</p>
+<section class="game" id="game">
+  <h1 class="game__heading">Wynik</h1>
+  <div class="container">
+    {{ wtf.quick_form(form) }}
+  </div>
 
-    <div class="hit">
-      <p class="hit__message"></p>
-    </div>
+  <div class="hit">
+    <p class="hit__message"></p>
+  </div>
 
-    <div class="wrapper">
-      <img class="wrapper__card rotate" src="../static/assets/dama-karo.jpg" alt="dama-karo"/>
-      <img class="wrapper__card rotate" src="../static/assets/dama-pik.jpg" alt="dama-karo"/>
-      <img class="wrapper__card rotate" src="../static/assets/dama-kier.jpg" alt="dama-karo"/>
-    </div>
+  <div class="wrapper">
+    <img class="wrapper__card rotate" src="../static/assets/dama-karo.jpg" alt="dama-karo" />
+    <img class="wrapper__card rotate" src="../static/assets/dama-pik.jpg" alt="dama-karo" />
+    <img class="wrapper__card rotate" src="../static/assets/dama-kier.jpg" alt="dama-karo" />
+  </div>
 
-    <div class="btns">
-      <button class="btns__btn">Start</button>
-      <button class="btns__btn">Reset</button>
-    </div>
-  </section>
+  <div class="btns">
+    <button class="btns__btn">Start</button>
+    <button class="btns__btn">Reset</button>
+  </div>
+</section>
 
 {% endblock %}

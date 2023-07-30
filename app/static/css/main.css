@@ -8,7 +8,7 @@
 }
 
 :root {
-  width: 100vw;
+  width: 100%;
   font-size: 62.5%;
   scroll-behavior: smooth;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
@@ -408,11 +408,6 @@ body {
 .login__form {
   margin-top: 50px;
 }
-.login__form .form-control {
-  margin-top: 10px;
-  font-size: 1.6rem;
-  width: 50%;
-}
 .login__form .btn {
   margin-top: 20px;
   padding: 7px 15px;
@@ -433,8 +428,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: normal;
 }
 
+label {
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .form-control {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    width: 60%;
+  }
+}
 .rules {
   font-size: 1.4rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -462,6 +469,4 @@ body {
 .footer__description {
   color: #fff;
   text-align: center;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
