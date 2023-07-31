@@ -1,1 +1,1 @@
-web: gunicorn threecards.wsgi
+web: python cards.py
