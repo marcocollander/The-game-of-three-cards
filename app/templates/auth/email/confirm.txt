@@ -1,6 +1,6 @@
 Dear {{ user.username }},
 
-Welcome to Flasky!
+Welcome to The game of three cards!
 
 To confirm your account please click on the following link:
 
@@ -8,4 +8,4 @@ To confirm your account please click on the following link:
 
 Sincerely,
 
-The Flasky Team
+The game of three cards Team
