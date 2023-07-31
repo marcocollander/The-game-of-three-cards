@@ -24,7 +24,7 @@ Flask-WTF==1.1.1
 frozenlist==1.4.0
 greenlet==2.0.2
 idna==3.4
-# itsdangerous==1.1.0
+itsdangerous==1.1.0
 Jinja2==3.1.2
 Mail==2.1.0
 Mako==1.2.4
