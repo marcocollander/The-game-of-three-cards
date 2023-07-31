@@ -1,1 +1,1 @@
-web: python cards.py
+web: waitress-serve --port=$PORT cards:app
