@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT cards:app_APP
+web: flask db upgrade; gunicorn cards:'create_app()'
