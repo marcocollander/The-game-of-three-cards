@@ -1,1 +1,1 @@
-web: gunicorn cards:app
+web: waitress-serve --port=$PORT cards:app_APP
