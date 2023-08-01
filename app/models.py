@@ -1,6 +1,4 @@
 from werkzeug.security import generate_password_hash, check_password_hash
-
-# from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app
 from flask_login import UserMixin
 from . import db, login_manager
@@ -23,24 +21,18 @@ class User(UserMixin, db.Model):
         db.session.commit()
 
     def generate_confirmation_token(self, expiration=3600):
-        #  s = Serializer(current_app.config["SECRET_KEY"], expiration)
-        #  return s.dumps({"confirm": self.id}).decode("utf-8")
         token = jwt.encode({"confirm": self.id, "exp": datetime.datetime.now(
             tz=datetime.timezone.utc) + datetime.timedelta(seconds=expiration)},
                            current_app.config["SECRET_KEY"], algorithm="HS256")
-
         return token
 
     def confirm(self, token):
-        # s = Serializer(current_app.config["SECRET_KEY"])
         try:
-            # data = s.loads(token.encode("utf-8"))
             data = jwt.decode(token, current_app.config["SECRET_KEY"],
                               leeway=datetime.timedelta(seconds=10),
                               algorithms=["HS256"])
         except:
             return False
-
         if data.get("confirm") != self.id:
             return False
         self.confirmed = True
@@ -62,23 +54,17 @@ class User(UserMixin, db.Model):
         return "<User %r>" % self.username
 
     def generate_reset_token(self, expiration=3600):
-        # s = Serializer(current_app.config["SECRET_KEY"], expiration)
-        # return s.dumps({"reset": self.id}).decode("utf-8")
         token = jwt.encode({"confirm": self.id, "exp": datetime.datetime.now(
-            tz=datetime.timezone.utc) + datetime.timedelta(
-            seconds=expiration), }, current_app.config["SECRET_KEY"],
-                           algorithm="HS256", )
-
+            tz=datetime.timezone.utc) + datetime.timedelta(seconds=expiration)},
+                           current_app.config["SECRET_KEY"], algorithm="HS256")
         return token
 
     @staticmethod
     def reset_password(token, new_password):
-        # s = Serializer(current_app.config["SECRET_KEY"])
         try:
-            # data = s.loads(token.encode("utf-8"))
             data = jwt.decode(token, current_app.config["SECRET_KEY"],
                               leeway=datetime.timedelta(seconds=10),
-                              algorithms=["HS256"], )
+                              algorithms=["HS256"])
         except:
             return False
         user = User.query.get(data.get("reset"))
