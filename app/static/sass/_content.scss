@@ -1,13 +1,6 @@
-.game {
-  &__heading {
-    margin: 0 0 10px 0;
-    text-align: center;
-  }
-}
-
 .content {
   &__message {
-    margin-top: 10px;
+    margin: 70px;
     text-align: center;
     font-size: 2rem;
   }
@@ -24,14 +17,13 @@
 }
 
 .wrapper {
-  margin-top: 50px;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
 
   &__card {
     width: 100px;
     aspect-ratio: 1/1.5;
-    border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
 
@@ -54,13 +46,18 @@
   justify-content: center;
 
   &__btn {
-    margin-top: 40px;
-    padding: 7px 15px;
+    margin-left: 5px;
+    margin-top: 70px;
+    padding: 5px 15px;
     border: none;
     border-radius: 15px;
     letter-spacing: 1px;
     font-size: 1.8rem;
   }
+}
+
+.btn {
+  margin-top: 20px;
 }
 
 
@@ -89,7 +86,7 @@
     justify-content: center;
 
     &__card {
-      width: 120px;
+      width: 130px;
     }
   }
 }
@@ -99,8 +96,7 @@
     justify-content: center;
 
     &__card {
-      width: 130px;
-      border: 2px solid black;
+      width: 140px;
     }
   }
 

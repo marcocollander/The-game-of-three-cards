@@ -273,13 +273,8 @@ body {
     align-items: center;
   }
 }
-.game__heading {
-  margin: 0 0 10px 0;
-  text-align: center;
-}
-
 .content__message {
-  margin-top: 10px;
+  margin: 70px;
   text-align: center;
   font-size: 2rem;
 }
@@ -293,14 +288,13 @@ body {
 }
 
 .wrapper {
-  margin-top: 50px;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
 }
 .wrapper__card {
   width: 100px;
   aspect-ratio: 1/1.5;
-  border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -321,12 +315,17 @@ body {
   justify-content: center;
 }
 .btns__btn {
-  margin-top: 40px;
-  padding: 7px 15px;
+  margin-left: 5px;
+  margin-top: 70px;
+  padding: 5px 15px;
   border: none;
   border-radius: 15px;
   letter-spacing: 1px;
   font-size: 1.8rem;
+}
+
+.btn {
+  margin-top: 20px;
 }
 
 @keyframes rotate {
@@ -350,7 +349,7 @@ body {
     justify-content: center;
   }
   .wrapper__card {
-    width: 120px;
+    width: 130px;
   }
 }
 @media (min-width: 576px) {
@@ -358,8 +357,7 @@ body {
     justify-content: center;
   }
   .wrapper__card {
-    width: 130px;
-    border: 2px solid black;
+    width: 140px;
   }
   .btns__btn {
     padding: 10px 25px;
@@ -397,16 +395,16 @@ body {
   }
 }
 .login {
-  margin-top: 50px;
   text-align: center;
 }
 .login__heading {
-  margin-top: 50px;
+  margin-top: 70px;
   font-size: 2.5rem;
   letter-spacing: 2px;
 }
 .login__form {
-  margin-top: 50px;
+  margin-top: 70px;
+  padding: 50px;
 }
 .login__form .btn {
   margin-top: 20px;
@@ -420,15 +418,22 @@ body {
   font-size: 2rem;
 }
 .login__info {
-  margin-top: 100px;
-  font-size: 2rem;
+  margin-top: 50px;
+  font-size: 1.8rem;
+}
+.login__link {
+  color: white;
 }
 
 .form-group {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   font-weight: normal;
+}
+
+.form-control {
+  width: 50%;
 }
 
 label {
@@ -460,7 +465,7 @@ label {
 
 .footer {
   position: relative;
-  bottom: -50vh;
+  bottom: -10vh;
   padding: 10px;
   font-size: 1.3rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
