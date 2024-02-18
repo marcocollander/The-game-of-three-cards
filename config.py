@@ -26,7 +26,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = (
-        "mysql://marcocollander:Mqalf5942vxegs@raubuc" ".net/marco_collander_2"
+        "mysql://marcocollander:RD!HG559tbA3Pjv@raubuc" ".net/marco_collander_2"
     )
 
 
